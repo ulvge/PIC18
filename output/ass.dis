@@ -31,15 +31,15 @@
     Program header entries: 1
     Section header entries: 17
 
-    Program header offset: 1983104 (0x001e4280)
-    Section header offset: 1983136 (0x001e42a0)
+    Program header offset: 3017584 (0x002e0b70)
+    Section header offset: 3017616 (0x002e0b90)
 
     Section header string table index: 16
 
 ========================================================================
 
 ** Program header #0 (PT_LOAD) [PF_X + PF_W + PF_R + PF_ARM_ENTRY]
-    Size : 284096 bytes (59464 bytes in file)
+    Size : 284096 bytes (59460 bytes in file)
     Virtual address: 0x08000000 (Alignment 32)
 
 
@@ -15554,11 +15554,11 @@
         0x08009c20:    e7fe        ..      B        0x8009c20 ; main + 428
     $d
         0x08009c22:    0000        ..      DCW    0
-        0x08009c24:    323a3631    16:2    DCD    842675761
-        0x08009c28:    39333a30    0:39    DCD    959658544
+        0x08009c24:    343a3331    13:4    DCD    876229425
+        0x08009c28:    39313a34    4:19    DCD    959527476
         0x08009c2c:    00000000    ....    DCD    0
         0x08009c30:    2079614d    May     DCD    544825677
-        0x08009c34:    32203332    23 2    DCD    840971058
+        0x08009c34:    32203432    24 2    DCD    840971314
         0x08009c38:    00343230    024.    DCD    3420720
         0x08009c3c:    200001a0    ...     DCD    536871328
         0x08009c40:    e000ed14    ....    DCD    3758157076
@@ -18789,9 +18789,9 @@
         0x0800bb16:    bf18        ..      IT       NE
         0x0800bb18:    2100        .!      MOVNE    r1,#0
         0x0800bb1a:    d001        ..      BEQ      0x800bb20 ; vApplicationIdleHook + 32
-        0x0800bb1c:    7041        Ap      STRB     r1,[r0,#1]
+        0x0800bb1c:    7001        .p      STRB     r1,[r0,#0]
         0x0800bb1e:    bd10        ..      POP      {r4,pc}
-        0x0800bb20:    7841        Ax      LDRB     r1,[r0,#1]
+        0x0800bb20:    7801        .x      LDRB     r1,[r0,#0]
         0x0800bb22:    2900        .)      CMP      r1,#0
         0x0800bb24:    bf08        ..      IT       EQ
         0x0800bb26:    2101        .!      MOVEQ    r1,#1
@@ -21795,10 +21795,10 @@
         0x0800da58:    203a646c    ld:     DCD    540697708
         0x0800da5c:    4d202020       M    DCD    1293951008
         0x0800da60:    32207961    ay 2    DCD    840989025
-        0x0800da64:    30322033    3 20    DCD    808591411
+        0x0800da64:    30322034    4 20    DCD    808591412
         0x0800da68:    20203432    24      DCD    538981426
-        0x0800da6c:    323a3631    16:2    DCD    842675761
-        0x0800da70:    39333a30    0:39    DCD    959658544
+        0x0800da6c:    343a3331    13:4    DCD    876229425
+        0x0800da70:    39313a34    4:19    DCD    959527476
         0x0800da74:    6f530a0d    ..So    DCD    1867713037
         0x0800da78:    56207466    ft V    DCD    1444967526
         0x0800da7c:    69737265    ersi    DCD    1769173605
@@ -22372,11 +22372,11 @@
         0x0800e354:    20000000    ...     DCD    536870912
         0x0800e358:    000002a0    ....    DCD    672
         0x0800e35c:    08000b68    h...    DCD    134220648
-        0x0800e360:    0800e554    T...    DCD    134276436
+        0x0800e360:    0800e550    P...    DCD    134276432
         0x0800e364:    24000000    ...$    DCD    603979776
         0x0800e368:    00017770    pw..    DCD    96112
         0x0800e36c:    08000b68    h...    DCD    134220648
-        0x0800e370:    0800e554    T...    DCD    134276436
+        0x0800e370:    0800e550    P...    DCD    134276432
         0x0800e374:    200002a0    ...     DCD    536871584
         0x0800e378:    0001f700    ....    DCD    128768
         0x0800e37c:    0800874c    L...    DCD    134252364
@@ -22505,7 +22505,7 @@
     shellCommand$$Limit
 
 ** Section #2 'RW_IRAM1' (SHT_PROGBITS) [SHF_ALLOC + SHF_WRITE]
-    Size   : 164 bytes (alignment 8)
+    Size   : 160 bytes (alignment 8)
     Address: 0x20000000
 
 
@@ -22528,33 +22528,33 @@
 
 
 ** Section #7 '.debug_info' (SHT_PROGBITS)
-    Size   : 244740 bytes
+    Size   : 277316 bytes
 
 
 ** Section #8 '.debug_line' (SHT_PROGBITS)
-    Size   : 84768 bytes
+    Size   : 86528 bytes
 
 
 ** Section #9 '.debug_loc' (SHT_PROGBITS)
-    Size   : 35584 bytes
+    Size   : 35552 bytes
 
 
 ** Section #10 '.debug_macinfo' (SHT_PROGBITS)
-    Size   : 1394452 bytes
+    Size   : 2394688 bytes
 
 
 ** Section #11 '.debug_pubnames' (SHT_PROGBITS)
-    Size   : 11917 bytes
+    Size   : 11881 bytes
 
 
 ** Section #12 '.symtab' (SHT_SYMTAB)
-    Size   : 28656 bytes (alignment 4)
+    Size   : 28640 bytes (alignment 4)
     String table #13 '.strtab'
-    Last local symbol no. 1221
+    Last local symbol no. 1220
 
 
 ** Section #13 '.strtab' (SHT_STRTAB)
-    Size   : 24156 bytes
+    Size   : 24152 bytes
 
 
 ** Section #14 '.note' (SHT_NOTE)

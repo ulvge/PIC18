@@ -313,47 +313,6 @@ void assert_failed(uint8_t *file, uint32_t line)
 }
 #endif /* USE_FULL_ASSERT */
 
-void ToggleAllGPIO(void){
-    static bool isOn = true;
-	printf("ToggleAllGPIO = %s\r\n", isOn ? "on" : "off");
-    // 2 PC13
-    GPIO_setPinStatus(GPIO_MCLR, (FunctionalState)isOn, NULL);
-    // 8 PC0
-    GPIO_setPinStatus(GPIO_PIC_LED, (FunctionalState)isOn, NULL);
-    HAL_GPIO_WritePin(XBEAM_PORT, XBEAM_PIN, (GPIO_PinState)(isOn));
-    GPIO_setPinStatus(GPIO_INTRPT, (FunctionalState)isOn, NULL);
-    GPIO_setPinStatus(GPIO_LD_MSLOPE, (FunctionalState)isOn, NULL);
-    // 14 PA0
-    GPIO_setPinStatus(GPIO_PLUS_COUNT, (FunctionalState)isOn, NULL);
-    GPIO_setPinStatus(GPIO_BUSY, (FunctionalState)isOn, NULL);
-    // 20 PA4
-    HAL_GPIO_WritePin(GPIO_SPI1_PORT, GPIO_SPI1_NSS, (GPIO_PinState)(isOn));
-    HAL_GPIO_WritePin(GPIO_SPI1_PORT, GPIO_SPI1_SCK, (GPIO_PinState)(isOn));
-    HAL_GPIO_WritePin(GPIO_SPI1_PORT, GPIO_SPI1_MISO, (GPIO_PinState)(isOn));
-    HAL_GPIO_WritePin(GPIO_SPI1_PORT, GPIO_SPI1_MOSI, (GPIO_PinState)(isOn));
-    // 25 PC5 PB0~2 PB10
-    GPIO_setPinStatus(GPIO_DIRECTION, (FunctionalState)isOn, NULL);
-    GPIO_setPinStatus(GPIO_SPOT, (FunctionalState)isOn, NULL);
-    GPIO_setPinStatus(GPIO_INTEGRATE, (FunctionalState)isOn, NULL);
-    GPIO_setPinStatus(GPIO_POS_EQUALS, (FunctionalState)isOn, NULL);
-    GPIO_setPinStatus(GPIO_MATCH, (FunctionalState)isOn, NULL);
-    // 33 PB12
-    GPIO_setPinStatus(GPIO_LD_POS, (FunctionalState)isOn, NULL);
-    // 35 PB14
-    GPIO_setPinStatus(GPIO_LD_SLOPE, (FunctionalState)isOn, NULL);
-    GPIO_setPinStatus(GPIO_RUN_LED, (FunctionalState)isOn, NULL);
-    // 42 PA10
-    GPIO_setPinStatus(GPIO_GLITCH_SHUTDOWN, (FunctionalState)isOn, NULL);
-
-    if (isOn){
-        GPIO_SetDAC(0xffff);
-    }else{
-        GPIO_SetDAC(0x0000);
-    }
-    
-    
-    isOn = !isOn;
-}
 void PrintTaskStackHead(void)
 {
     TaskHandle_t taskHandle[3] = {gp_xHandle_Task_outputWave, gp_xHandle_Task_uartMonitor, gp_xHandle_Task_shell};
@@ -377,7 +336,6 @@ void vApplicationIdleHook( void )
         if (!isPrinted) {
             isPrinted = true;
             //PrintTaskStackHead();
-            //ToggleAllGPIO();
         }
     }else{
         isPrinted = false;
