@@ -3,6 +3,7 @@
 1、keil5 + stm32H7A3RGTx
 2、芯片stm32H7A3RGTx，1.4M的ram+2M flash,主频280M
 3、采用最新的freeRTOS+最新的STM hal库
+4、doc中有很多stm32h7的书箱
 
 功能：
 1、输出两路并口信号给DAC
